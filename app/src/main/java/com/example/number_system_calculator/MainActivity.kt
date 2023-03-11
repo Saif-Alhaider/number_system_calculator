@@ -103,9 +103,9 @@ class MainActivity : AppCompatActivity() {
     private fun convertBinary(number: CharSequence?): Map<String, String>? {
 
         if (number == null) return null
-        val hexString = number.toString().toIntOrNull()?.toString(16)?.uppercase() ?: return null
+        val hexString = number.toString().toIntOrNull(2)?.toString(16)?.uppercase() ?: return null
         val decimalString = number.toString().toIntOrNull(2)?.toString() ?: return null
-        val octalString = number.toString().toIntOrNull()?.toString(8) ?: return null
+        val octalString = number.toString().toIntOrNull(2)?.toString(8) ?: return null
         return mapOf(
             "hex" to hexString,
             "decimal" to decimalString,
