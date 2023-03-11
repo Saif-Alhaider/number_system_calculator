@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                         editText3.setText(convertBinary(p0)?.get("hex") ?: "NaN")
                         editText4.setText(convertBinary(p0)?.get("octal") ?: "NaN")
                     }
-                    editText3.id ->{
+                    editText3.id -> {
                         editText1.setText(convertHex(p0)?.get("decimal") ?: "NaN")
                         editText2.setText(convertHex(p0)?.get("binary") ?: "NaN")
                         editText4.setText(convertHex(p0)?.get("octal") ?: "NaN")
@@ -69,35 +69,22 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        editText1.onFocusChangeListener = OnFocusChangeListener { p0, p1 ->
+        editText1.onFocusChangeListener = CustomOnFocusChange()
+        editText2.onFocusChangeListener = CustomOnFocusChange()
+
+        editText3.onFocusChangeListener = CustomOnFocusChange()
+        editText4.onFocusChangeListener = CustomOnFocusChange()
+    }
+
+    inner class CustomOnFocusChange() : OnFocusChangeListener {
+        override fun onFocusChange(p0: View?, p1: Boolean) {
             currentEditText?.removeTextChangedListener(textWatcher)
 
             currentEditText = p0 as EditText
 
             currentEditText?.addTextChangedListener(textWatcher)
         }
-        editText2.onFocusChangeListener = OnFocusChangeListener { p0, p1 ->
-            currentEditText?.removeTextChangedListener(textWatcher)
 
-            currentEditText = p0 as EditText
-
-            currentEditText?.addTextChangedListener(textWatcher)
-        }
-
-        editText3.onFocusChangeListener = OnFocusChangeListener { p0, p1 ->
-            currentEditText?.removeTextChangedListener(textWatcher)
-
-            currentEditText = p0 as EditText
-
-            currentEditText?.addTextChangedListener(textWatcher)
-        }
-        editText4.onFocusChangeListener = OnFocusChangeListener { p0, p1 ->
-            currentEditText?.removeTextChangedListener(textWatcher)
-
-            currentEditText = p0 as EditText
-
-            currentEditText?.addTextChangedListener(textWatcher)
-        }
     }
 
     private fun convertDecimal(number: CharSequence?): Map<String, String>? {
@@ -125,6 +112,7 @@ class MainActivity : AppCompatActivity() {
             "octal" to octalString
         )
     }
+
     private fun convertHex(number: CharSequence?): Map<String, String>? {
 
         if (number == null) return null
@@ -137,6 +125,7 @@ class MainActivity : AppCompatActivity() {
             "octal" to octalString
         )
     }
+
     private fun convertOctal(number: CharSequence?): Map<String, String>? {
 
         if (number == null) return null

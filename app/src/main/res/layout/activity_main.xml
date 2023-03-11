@@ -31,13 +31,14 @@
             >
             <TextView
                 style="@style/card_title"
-                android:text="Decimal"
+                android:text="@string/decimal_system"
                 android:textColor="#FFA930"
                 />
             <EditText
                 android:id="@+id/editText1"
-                android:text="0"
+                android:text="@string/initailValue"
                 style="@style/card_edit_text"
+                android:inputType="number"
                 />
         </LinearLayout>
     </LinearLayout>
@@ -52,13 +53,14 @@
             >
             <TextView
                 style="@style/card_title"
-                android:text="Binary"
+                android:text="@string/binary_system"
                 android:textColor="#73CC73"
                 />
             <EditText
                 android:id="@+id/editText2"
-                android:text="0"
+                android:text="@string/initailValue"
                 style="@style/card_edit_text"
+                android:inputType="number"
                 />
         </LinearLayout>
     </LinearLayout>
@@ -73,13 +75,14 @@
             >
             <TextView
                 style="@style/card_title"
-                android:text="Hex"
+                android:text="@string/hex_system"
                 android:textColor="#DD72FF"
                 />
             <EditText
                 android:id="@+id/editText3"
-                android:text="0"
+                android:text="@string/initailValue"
                 style="@style/card_edit_text"
+                android:inputType="textCapWords"
                 />
         </LinearLayout>
     </LinearLayout>
@@ -94,13 +97,14 @@
             >
             <TextView
                 style="@style/card_title"
-                android:text="Octal"
+                android:text="@string/octal_system"
                 android:textColor="#51D4E5"
                 />
             <EditText
                 android:id="@+id/editText4"
-                android:text="0"
+                android:text="@string/initailValue"
                 style="@style/card_edit_text"
+                android:inputType="number"
                 />
         </LinearLayout>
     </LinearLayout>

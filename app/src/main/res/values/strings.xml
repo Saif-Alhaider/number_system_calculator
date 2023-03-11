@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">number_system_calculator</string>
     <string name="title">Number System</string>
+    <string name="initailValue">0</string>
+    <string name="hex_system">Hex</string>
+    <string name="decimal_system">Decimal</string>
+    <string name="binary_system">Binary</string>
+    <string name="octal_system">Octal</string>
 </resources>
